@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لمسة | إتمام الشراء</title>
+  <link rel="stylesheet" href="css/style.css?v=9">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container" id="checkout-root">
+    <div class="page-title">
+      <nav class="crumbs" aria-label="مسار الصفحة"><a href="index.html">الرئيسية</a><span class="sep">/</span><a href="cart.html">السلة</a><span class="sep">/</span><span>إتمام الشراء</span></nav>
+      <h1>إتمام الشراء</h1>
+    </div>
+    <div class="steps">
+      <span class="step done"><i>١</i> السلة</span><span class="step-line"></span>
+      <span class="step now"><i>٢</i> بيانات التوصيل</span><span class="step-line"></span>
+      <span class="step"><i>٣</i> تأكيد الطلب</span>
+    </div>
+
+    <form class="layout-2" id="checkout-form" novalidate>
+      <div>
+        <div class="panel">
+          <h3 data-ico="user">بيانات التواصل</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">الاسم بالكامل <em>*</em></label>
+              <input id="name" name="name" autocomplete="name" required placeholder="مثال: سارة أحمد">
+              <span class="err">اكتب الاسم من فضلك</span>
+            </div>
+            <div class="field">
+              <label for="phone">رقم الموبايل <em>*</em></label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="01xxxxxxxxx" pattern="01[0125][0-9]{8}" dir="ltr" style="text-align:right">
+              <span class="err">رقم موبايل مصري صحيح (١١ رقم)</span>
+            </div>
+            <div class="field full">
+              <label for="email">البريد الإلكتروني <span class="muted">(اختياري)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" dir="ltr" style="text-align:right">
+              <span class="err">البريد مش صحيح</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 data-ico="pin">عنوان التوصيل</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="gov">المحافظة <em>*</em></label>
+              <select id="gov" name="gov" required>
+                <option value="">اختار المحافظة</option>
+                <option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>القليوبية</option>
+                <option>الدقهلية</option><option>الشرقية</option><option>الغربية</option><option>المنوفية</option>
+                <option>البحيرة</option><option>بورسعيد</option><option>الإسماعيلية</option><option>السويس</option>
+                <option>أسيوط</option><option>المنيا</option><option>سوهاج</option><option>الأقصر</option><option>أسوان</option>
+              </select>
+              <span class="err">اختار المحافظة</span>
+            </div>
+            <div class="field">
+              <label for="city">المدينة / المنطقة <em>*</em></label>
+              <input id="city" name="city" required placeholder="مثال: مدينة نصر">
+              <span class="err">اكتب المنطقة</span>
+            </div>
+            <div class="field full">
+              <label for="address">العنوان بالتفصيل <em>*</em></label>
+              <input id="address" name="address" autocomplete="street-address" required placeholder="الشارع، رقم العمارة، الدور، الشقة">
+              <span class="err">اكتب العنوان بالتفصيل</span>
+            </div>
+            <div class="field full">
+              <label for="notes">ملاحظات للمندوب <span class="muted">(اختياري)</span></label>
+              <textarea id="notes" name="notes" rows="2" placeholder="مثلاً: كلّمني قبل ما توصل"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 data-ico="truck">طريقة الشحن</h3>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="ship" value="std" checked>
+              <span class="c-body"><b>شحن عادي</b><small>خلال ٣-٥ أيام عمل</small></span><span class="tag" id="std-fee"></span></label>
+            <label class="choice"><input type="radio" name="ship" value="express">
+              <span class="c-body"><b>شحن سريع</b><small>خلال ٢٤-٤٨ ساعة</small></span><span class="tag" id="exp-fee"></span></label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 data-ico="card">طريقة الدفع</h3>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="pay" value="cod" checked>
+              <span class="c-body"><b>الدفع عند الاستلام</b><small>ادفع كاش للمندوب</small></span><span class="c-ico" data-ico="cash"></span></label>
+            <label class="choice"><input type="radio" name="pay" value="card">
+              <span class="c-body"><b>كارت بنكي</b><small>فيزا / ماستركارد / ميزة</small></span><span class="c-ico" data-ico="card"></span></label>
+            <label class="choice"><input type="radio" name="pay" value="wallet">
+              <span class="c-body"><b>محفظة إلكترونية</b><small>فودافون كاش / إنستاباي</small></span><span class="c-ico" data-ico="phone"></span></label>
+          </div>
+          <p class="note" id="pay-note" hidden>في النسخة النهائية هيتم تحويلك لبوابة الدفع الآمنة لإتمام العملية.</p>
+        </div>
+      </div>
+
+      <aside class="panel soft sticky">
+        <h3>طلبك</h3>
+        <div class="mini-list" id="mini-list"></div>
+        <div id="totals"></div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:16px">تأكيد الطلب</button>
+        <p class="note">بالضغط على تأكيد الطلب انت موافق على شروط الاستخدام وسياسة الاسترجاع.</p>
+      </aside>
+    </form>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
+  <script src="js/pages/checkout.js?v=9"></script>
+</body>
+</html>

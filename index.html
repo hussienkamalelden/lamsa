@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="لمسة — ملابس حريمي ورجالي وأطفال، كوتشيهات، إكسسوارات وأدوات منزلية.">
+  <title>لمسة | كل اللي بتحتاجه في مكان واحد</title>
+  <link rel="stylesheet" href="css/style.css?v=9">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <!-- Hero slider -->
+    <section class="hero container" aria-label="العروض">
+      <div id="hero"></div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section container" id="cats">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Categories</span>
+          <h2>تسوّق حسب القسم</h2>
+        </div>
+      </div>
+      <div class="cat-grid" id="cat-grid"></div>
+    </section>
+
+    <!-- Most viewed -->
+    <section class="section container tight">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Trending</span>
+          <h2>الأكثر مشاهدة</h2>
+          <p>المنتجات اللي الناس بتتفرج عليها الأيام دي</p>
+        </div>
+      </div>
+      <div id="most-viewed"></div>
+    </section>
+
+    <!-- Promo -->
+    <section class="section container tight">
+      <div class="promo" id="promo"></div>
+    </section>
+
+    <!-- All products -->
+    <section class="section container tight" id="all">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Shop all</span>
+          <h2>كل المنتجات</h2>
+          <p id="all-count"></p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="chips" id="filter-chips"></div>
+        <select class="select" id="sort" aria-label="ترتيب">
+          <option value="default">الترتيب: المقترح</option>
+          <option value="views">الأكثر مشاهدة</option>
+          <option value="rating">الأعلى تقييماً</option>
+          <option value="low">السعر: من الأقل</option>
+          <option value="high">السعر: من الأعلى</option>
+        </select>
+      </div>
+      <div class="grid" id="all-grid"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="container">
+      <div class="features" id="features"></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
+  <script src="js/pages/home.js?v=9"></script>
+</body>
+</html>

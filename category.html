@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لمسة | القسم</title>
+  <link rel="stylesheet" href="css/style.css?v=9">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="cat-hero container">
+      <div class="cat-hero-inner">
+        <div>
+          <nav class="crumbs" aria-label="مسار الصفحة"><a href="index.html">الرئيسية</a><span class="sep">/</span><span id="crumb-name"></span></nav>
+          <h1 id="cat-name"></h1>
+          <p id="cat-tagline"></p>
+          <span class="count" id="cat-count"></span>
+        </div>
+        <div class="cat-hero-media" id="cat-media" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="toolbar">
+        <div class="chips" id="price-chips">
+          <button class="chip active" data-range="all">كل الأسعار</button>
+          <button class="chip" data-range="0-500">أقل من ٥٠٠</button>
+          <button class="chip" data-range="500-1000">٥٠٠ – ١٠٠٠</button>
+          <button class="chip" data-range="1000-99999">أكتر من ١٠٠٠</button>
+          <button class="chip" data-range="sale">عليه خصم</button>
+        </div>
+        <select class="select" id="sort" aria-label="ترتيب">
+          <option value="default">الترتيب: المقترح</option>
+          <option value="views">الأكثر مشاهدة</option>
+          <option value="rating">الأعلى تقييماً</option>
+          <option value="low">السعر: من الأقل</option>
+          <option value="high">السعر: من الأعلى</option>
+        </select>
+      </div>
+      <div class="grid" id="cat-grid"></div>
+    </section>
+
+    <section class="section container tight">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Explore</span>
+          <h2>تصفّح أقسام تانية</h2>
+        </div>
+      </div>
+      <div id="other-cats"></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
+  <script src="js/pages/category.js?v=9"></script>
+</body>
+</html>
